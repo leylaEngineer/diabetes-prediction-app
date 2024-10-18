@@ -1,21 +1,25 @@
 # Use the official Python image from the Docker Hub
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the requirements file first for better caching
+# Copy the requirements file
 COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir --upgrade pip setuptools
+COPY ./static /app/static
+COPY ./templates /app/templates
+
+# Upgrade pip and setuptools
+RUN pip install --upgrade pip==23.3 setuptools==70.0.0 scikit-learn==1.5.0
+# Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
+# Copy the application code and model
 COPY . .
 
-# Make port 10000 available to the world outside this container
-EXPOSE 10000
+# Expose the port your app runs on
+EXPOSE 80
 
-# Command to run your application using Gunicorn
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000", "--workers", "3"]
+# Command to run the application
+CMD ["python", "app.py"]
