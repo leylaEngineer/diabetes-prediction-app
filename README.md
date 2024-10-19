@@ -22,3 +22,5 @@ Users simply need to fill out the form with the required information and click o
 Visit the app: [Diabetes Prediction](https://predict-d.onrender.com/)  to begin your assessment.
 
 ![Diabetes Prediction Image](predict.png)
+![Diabetes Prediction Image](p1.png)
+
