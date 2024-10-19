@@ -19,6 +19,6 @@ The **Diabetes Prediction App** is a user-friendly tool designed to help individ
 Users simply need to fill out the form with the required information and click on the "Predict" button. The app processes the data using a trained machine learning model, which has been developed through extensive training on historical health data. This allows the app to provide an accurate assessment of diabetes risk, helping users make informed health decisions.
 
 ### Get Started
-Visit the app: [Diabetes Prediction] to begin your assessment.
+Visit the app: [Diabetes Prediction](https://predict-d.onrender.com/)  to begin your assessment.
 
 ![Diabetes Prediction Image](predict.png)
